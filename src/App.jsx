@@ -8,18 +8,18 @@ import JournalForm from "./components/JournalForm/JournalForm";
 import { useState } from "react";
 
 const INITIAL_DATA = [
-  {
-    id: 1,
-    title: "Подготовка к обновлению курсов",
-    text: "Горные походы открывают удивительные природные ландшафты",
-    date: new Date()
-  },
-  {
-    id: 2,
-    title: "Поход в горы",
-    text: "Думал, что очень много времени",
-    date: new Date()
-  }
+  // {
+  //   id: 1,
+  //   title: "Подготовка к обновлению курсов",
+  //   text: "Горные походы открывают удивительные природные ландшафты",
+  //   date: new Date()
+  // },
+  // {
+  //   id: 2,
+  //   title: "Поход в горы",
+  //   text: "Думал, что очень много времени",
+  //   date: new Date()
+  // }
 ];
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
         text: item.text,
         title: item.title,
         date: new Date(item.date),
-        id: Math.max(...oldItems.map(i => i.id)) + 1
+        id: oldItems.length > 0 ? Math.max(...oldItems.map(i => i.id)) + 1 : 1
       }
     ]);
   };
