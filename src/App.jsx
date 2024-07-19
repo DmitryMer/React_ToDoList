@@ -25,15 +25,16 @@ const INITIAL_DATA = [
 function App() {
   const [items, setItems] = useState(INITIAL_DATA);
 
-  const addItem = item => {
-    setItems(oldItems => [
+  const addItem = (item) => {
+    setItems((oldItems) => [
       ...oldItems,
       {
         text: item.text,
         title: item.title,
         date: new Date(item.date),
-        id: oldItems.length > 0 ? Math.max(...oldItems.map(i => i.id)) + 1 : 1
-      }
+        id:
+          oldItems.length > 0 ? Math.max(...oldItems.map((i) => i.id)) + 1 : 1,
+      },
     ]);
   };
 
